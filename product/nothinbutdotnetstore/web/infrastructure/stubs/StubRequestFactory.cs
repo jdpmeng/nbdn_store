@@ -14,9 +14,11 @@ namespace nothinbutdotnetstore.web.infrastructure.stubs
 
         class StubRequest : Request
         {
-            public InputModel map<InputModel>()
+            
+
+            public InputModel map<InputModel>() where InputModel : new()
             {
-                throw new NotImplementedException();
+                return typeof(InputModel)
             }
         }
     }
