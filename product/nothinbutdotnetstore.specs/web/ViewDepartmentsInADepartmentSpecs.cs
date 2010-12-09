@@ -44,7 +44,7 @@ namespace nothinbutdotnetstore.specs.web
             static Request request;
             static IEnumerable<Department> the_departments;
             static ResponseEngine response_engine;
-            private static Department parent_department;
+            static Department parent_department;
         }
     }
 }
