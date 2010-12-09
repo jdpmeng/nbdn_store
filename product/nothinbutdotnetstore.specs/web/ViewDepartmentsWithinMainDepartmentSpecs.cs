@@ -28,7 +28,7 @@ namespace nothinbutdotnetstore.specs.web
                 provide_a_basic_sut_constructor_argument<Department>(the_main_department);
                 the_sub_departments = new List<SubDepartment>();
                 request = an<Request>();
-
+                the_main_department = an<Department>();
                 department_repository.Stub(x => x.get_all_the_departments_within_the_main_department(the_main_department)).Return(
                     the_sub_departments);
             };
