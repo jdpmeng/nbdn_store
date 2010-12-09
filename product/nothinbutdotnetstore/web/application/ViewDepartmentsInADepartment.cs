@@ -9,23 +9,23 @@ namespace nothinbutdotnetstore.web.application
 {
     public class ViewDepartmentsInADepartment : ApplicationCommand
     {
-        Repository repository;
+        StoreDirectory store_directory;
         ResponseEngine response_engine;
 
-        public ViewDepartmentsInADepartment():this(new StubRepository(),
+        public ViewDepartmentsInADepartment():this(new StubStoreDirectory(),
             new StubResponseEngine())
         {
         }
 
-        public ViewDepartmentsInADepartment(Repository repository, ResponseEngine response_engine)
+        public ViewDepartmentsInADepartment(StoreDirectory store_directory, ResponseEngine response_engine)
         {
-            this.repository = repository;
+            this.store_directory = store_directory;
             this.response_engine = response_engine;
         }
 
         public void process(Request request)
         {
-            response_engine.prepare(repository.get_all_departments_in(request.map<Department>()));
+            response_engine.prepare(store_directory.all_departments_in(request.map<Department>()));
         }
     }
 }

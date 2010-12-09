@@ -1,4 +1,3 @@
-using System;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.application.model;
@@ -9,23 +8,23 @@ namespace nothinbutdotnetstore.web.application
 {
     public class ViewProductsInADepartment : ApplicationCommand
     {
-        Repository repository;
+        StoreDirectory store_directory;
         ResponseEngine response_engine;
 
-        public ViewProductsInADepartment():this(new StubRepository(),
-            new StubResponseEngine())
+        public ViewProductsInADepartment() : this(new StubStoreDirectory(),
+                                                  new StubResponseEngine())
         {
         }
 
-        public ViewProductsInADepartment(Repository repository, ResponseEngine response_engine)
+        public ViewProductsInADepartment(StoreDirectory store_directory, ResponseEngine response_engine)
         {
-            this.repository = repository;
+            this.store_directory = store_directory;
             this.response_engine = response_engine;
         }
 
         public void process(Request request)
         {
-            response_engine.prepare(repository.get_all_products_in(request.map<Department>()));
+            response_engine.prepare(store_directory.all_products_in(request.map<Department>()));
         }
     }
 }

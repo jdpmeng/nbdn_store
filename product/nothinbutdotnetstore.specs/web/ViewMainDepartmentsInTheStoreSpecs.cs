@@ -22,11 +22,11 @@ namespace nothinbutdotnetstore.specs.web
             Establish c = () =>
             {
                 response_engine = the_dependency<ResponseEngine>();
-                department_repository = the_dependency<Repository>();
+                department_store_directory = the_dependency<StoreDirectory>();
                 the_main_departments = new List<Department>();
                 request = an<Request>();
 
-                department_repository.Stub(x => x.get_all_the_main_departments_in_the_store()).Return(
+                department_store_directory.Stub(x => x.all_main_departments()).Return(
                     the_main_departments);
             };
 
@@ -36,7 +36,7 @@ namespace nothinbutdotnetstore.specs.web
             It should_tell_the_response_to_display_the_main_departments = () =>
                 response_engine.received(x => x.prepare(the_main_departments));
 
-            static Repository department_repository;
+            static StoreDirectory department_store_directory;
             static Request request;
             static IEnumerable<Department> the_main_departments;
             static ResponseEngine response_engine;

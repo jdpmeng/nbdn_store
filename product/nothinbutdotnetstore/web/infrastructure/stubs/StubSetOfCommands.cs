@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using nothinbutdotnetstore.web.application;
@@ -16,6 +15,10 @@ namespace nothinbutdotnetstore.web.infrastructure.stubs
         {
             yield return new DefaultRequestCommand(x => true,
                                                    new ViewMainDepartmentsInTheStore());
+            yield return new DefaultRequestCommand(x => true,
+                                                   new ViewDepartmentsInADepartment());
+            yield return new DefaultRequestCommand(x => true,
+                                                   new ViewProductsInADepartment());
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Web;
 using nothinbutdotnetstore.stubs;
+using nothinbutdotnetstore.web.application.model;
 
 namespace nothinbutdotnetstore.web.infrastructure.stubs
 {
@@ -14,11 +15,14 @@ namespace nothinbutdotnetstore.web.infrastructure.stubs
 
         class StubRequest : Request
         {
-            
-
-            public InputModel map<InputModel>() where InputModel : new()
+            public InputModel map<InputModel>() 
             {
-                return typeof(InputModel)
+                return default(InputModel);
+
+                var enumerator = new StubSetOfCommands().GetEnumerator();
+                enumerator.MoveNext();
+                var item = enumerator.Current;
+
             }
         }
     }

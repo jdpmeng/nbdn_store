@@ -22,7 +22,7 @@ namespace nothinbutdotnetstore.specs.web
             Establish c = () =>
             {
                 response_engine = the_dependency<ResponseEngine>();
-                product_repository = the_dependency<Repository>();
+                product_store_directory = the_dependency<StoreDirectory>();
                 the_products = new List<Product>();
                 parent_department = new Department();
                 request = an<Request>();
@@ -31,7 +31,7 @@ namespace nothinbutdotnetstore.specs.web
                     parent_department);
 
 
-                product_repository.Stub(x => x.get_all_products_in(parent_department)).Return(
+                product_store_directory.Stub(x => x.all_products_in(parent_department)).Return(
                     the_products);
             };
 
@@ -41,7 +41,7 @@ namespace nothinbutdotnetstore.specs.web
             It should_tell_the_response_to_display_the_productss_in_a_department = () =>
                 response_engine.received(x => x.prepare(the_products));
 
-            static Repository product_repository;
+            static StoreDirectory product_store_directory;
             static Request request;
             static IEnumerable<Product> the_products;
             static ResponseEngine response_engine;

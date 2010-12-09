@@ -1,9 +1,7 @@
 namespace nothinbutdotnetstore.web.application.model
 {
-    public class Department : ModelType
+    public class Department 
     {
         public string name { get; set; }
-
-        public int id { get; set; }
     }
 }

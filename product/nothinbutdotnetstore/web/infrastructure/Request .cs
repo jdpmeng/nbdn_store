@@ -2,8 +2,7 @@ namespace nothinbutdotnetstore.web.infrastructure
 {
     public interface Request 
     {
-        InputModel map<InputModel>() where InputModel:
-
+        InputModel map<InputModel>(); 
 
     }
 }

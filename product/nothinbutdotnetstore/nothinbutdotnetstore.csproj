@@ -53,8 +53,8 @@
     <Compile Include="stubs\Stub.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\model\Product.cs" />
-    <Compile Include="web\Repository.cs" />
-    <Compile Include="tasks\stubs\StubRepository.cs" />
+    <Compile Include="web\StoreDirectory.cs" />
+    <Compile Include="tasks\stubs\StubStoreDirectory.cs" />
     <Compile Include="web\application\model\Department.cs" />
     <Compile Include="web\application\ViewDepartmentsInADepartment.cs" />
     <Compile Include="web\application\ViewMainDepartmentsInTheStore.cs" />

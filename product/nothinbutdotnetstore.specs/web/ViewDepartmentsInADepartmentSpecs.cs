@@ -22,7 +22,7 @@ namespace nothinbutdotnetstore.specs.web
             Establish c = () =>
             {
                 response_engine = the_dependency<ResponseEngine>();
-                department_repository = the_dependency<Repository>();
+                department_store_directory = the_dependency<StoreDirectory>();
                 the_departments = new List<Department>();
                 parent_department = new Department();
                 request = an<Request>();
@@ -30,7 +30,7 @@ namespace nothinbutdotnetstore.specs.web
                 request.Stub(x => x.map<Department>()).Return(
                     parent_department);
 
-                department_repository.Stub(x => x.get_all_departments_in(parent_department)).Return(
+                department_store_directory.Stub(x => x.all_departments_in(parent_department)).Return(
                     the_departments);
             };
 
@@ -40,7 +40,7 @@ namespace nothinbutdotnetstore.specs.web
             It should_tell_the_response_to_display_the_departments_in_a_department = () =>
                 response_engine.received(x => x.prepare(the_departments));
 
-            static Repository department_repository;
+            static StoreDirectory department_store_directory;
             static Request request;
             static IEnumerable<Department> the_departments;
             static ResponseEngine response_engine;
