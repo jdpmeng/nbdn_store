@@ -13,7 +13,7 @@ namespace nothinbutdotnetstore.web.infrastructure.stubs
 
         public IEnumerator<RequestCommand> GetEnumerator()
         {
-            yield return new DefaultRequestCommand(x => x.is_for_command<ViewMainDepartmentsInTheStore>(),
+            yield return new DefaultRequestCommand(IncomingRequest.is_for<ViewMainDepartmentsInTheStore>(),
                                                    new ViewMainDepartmentsInTheStore());
             yield return new DefaultRequestCommand(x => true,
                                                    new ViewDepartmentsInADepartment());
