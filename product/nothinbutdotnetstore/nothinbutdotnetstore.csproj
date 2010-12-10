@@ -57,6 +57,7 @@
     <Compile Include="web\application\model\Product.cs" />
     <Compile Include="web\infrastructure\ContextResolver.cs" />
     <Compile Include="web\infrastructure\ControllerDispatchingCommand.cs" />
+    <Compile Include="web\infrastructure\DefaultRequest.cs" />
     <Compile Include="web\infrastructure\SimpleViewFor.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
