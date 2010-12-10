@@ -44,7 +44,7 @@ namespace nothinbutdotnetstore.specs.web
             static string web_form_path;
         }
 
-        class OurModel
+        public class OurModel
         {
         }
     }
