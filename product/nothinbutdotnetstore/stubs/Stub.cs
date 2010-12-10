@@ -2,9 +2,9 @@ namespace nothinbutdotnetstore.stubs
 {
     public class Stub
     {
-        public static ElementToStub with<ElementToStub>() where ElementToStub : AStub, new()
+        public static StubImplementation with<StubImplementation>() where StubImplementation : new()
         {
-            return new ElementToStub();
+            return new StubImplementation();
         }
     }
 }
