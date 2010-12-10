@@ -1,19 +1,17 @@
-using System;
-
 namespace nothinbutdotnetstore.web.infrastructure
 {
     public class WebFormResponseEngine : ResponseEngine
     {
-        private ViewFactory viewFactory;
+        ViewFactory view_factory;
 
         public WebFormResponseEngine(ViewFactory factory)
         {
-            this.viewFactory = factory;
+            this.view_factory = factory;
         }
 
         public void prepare<ViewModel>(ViewModel model)
         {
-            viewFactory.create_view_for(model);
+            view_factory.create_view_for(model);
         }
     }
 }
