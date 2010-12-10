@@ -1,24 +1,20 @@
-using System.Web;
-
 namespace nothinbutdotnetstore.web.infrastructure
 {
     public class WebFormResponseEngine : ResponseEngine
     {
         ViewFactory view_factory;
-        private HttpContext context;
-        public WebFormResponseEngine(ViewFactory factory, HttpContext context)
+        ContextResolver context_resolver;
+
+        public WebFormResponseEngine(ViewFactory factory, ContextResolver context_resolver)
         {
             this.view_factory = factory;
-            this.context = context;
+            this.context_resolver = context_resolver;
         }
 
         public void prepare<ViewModel>(ViewModel model)
         {
-
-            var handler = view_factory.create_view_for<ViewModel>(model);
-            handler.ProcessRequest(context);
+            var handler = view_factory.create_view_for(model);
+            handler.ProcessRequest(context_resolver());
         }
-
-        
     }
 }

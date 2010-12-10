@@ -20,7 +20,7 @@ namespace nothinbutdotnetstore.specs.web
             Establish c = () =>
             {
                 the_context = ObjectFactory.create_http_context();
-                provide_a_basic_sut_constructor_argument(the_context);
+                provide_a_basic_sut_constructor_argument<ContextResolver>(() => the_context);
                 view_factory = the_dependency<ViewFactory>();
                 view = an<IHttpHandler>();
                 our_model = new OurModel();
