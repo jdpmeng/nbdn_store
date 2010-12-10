@@ -10,6 +10,11 @@ namespace nothinbutdotnetstore.web.application
         ResponseEngine response_engine;
         Query<ViewModel> query;
 
+        public View(Query<ViewModel> query)
+        {
+            this.query = query;
+        }
+
         public View(StoreDirectory store_directory, ResponseEngine response_engine,
                     Query<ViewModel> query)
         {

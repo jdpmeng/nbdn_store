@@ -54,6 +54,7 @@
     <Compile Include="web\application\View.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\model\Product.cs" />
+    <Compile Include="web\infrastructure\stubs\GetTheDepartmentsInADepartment.cs" />
     <Compile Include="web\infrastructure\stubs\GetTheProductsInADepartment.cs" />
     <Compile Include="web\infrastructure\stubs\Query.cs" />
     <Compile Include="web\StoreDirectory.cs" />
