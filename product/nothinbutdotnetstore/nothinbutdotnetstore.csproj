@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="stubs\AStub.cs" />
     <Compile Include="stubs\Stub.cs" />
+    <Compile Include="web\application\CommandBase.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\model\Product.cs" />
     <Compile Include="web\StoreDirectory.cs" />

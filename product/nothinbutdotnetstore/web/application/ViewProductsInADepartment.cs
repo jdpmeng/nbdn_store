@@ -6,23 +6,20 @@ using nothinbutdotnetstore.web.infrastructure.stubs;
 
 namespace nothinbutdotnetstore.web.application
 {
-    public class ViewProductsInADepartment : ApplicationCommand
+    public class ViewProductsInADepartment : CommandBase
     {
-        StoreDirectory store_directory;
-        ResponseEngine response_engine;
 
         public ViewProductsInADepartment() : this(new StubStoreDirectory(),
                                                   new StubResponseEngine())
         {
         }
 
-        public ViewProductsInADepartment(StoreDirectory store_directory, ResponseEngine response_engine)
+        public ViewProductsInADepartment(StoreDirectory store_directory, ResponseEngine response_engine) : base(store_directory,response_engine)
         {
-            this.store_directory = store_directory;
-            this.response_engine = response_engine;
+
         }
 
-        public void process(Request request)
+        public override void process(Request request)
         {
             response_engine.prepare(store_directory.all_products_in(request.map<Department>()));
         }
