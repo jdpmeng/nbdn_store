@@ -51,13 +51,18 @@
   <ItemGroup>
     <Compile Include="stubs\AStub.cs" />
     <Compile Include="stubs\Stub.cs" />
+    <Compile Include="web\application\StoreDirectoryController.cs" />
     <Compile Include="web\application\View.cs" />
     <Compile Include="web\application\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\model\Product.cs" />
     <Compile Include="web\infrastructure\ContextResolver.cs" />
+    <Compile Include="web\infrastructure\SimpleViewFor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="web\infrastructure\stubs\GetTheDepartmentsInADepartment.cs" />
     <Compile Include="web\infrastructure\stubs\GetTheProductsInADepartment.cs" />
     <Compile Include="web\infrastructure\stubs\Query.cs" />
+    <Compile Include="web\infrastructure\stubs\StubFormViewRegistry.cs" />
     <Compile Include="web\infrastructure\ViewFactory.cs" />
     <Compile Include="web\infrastructure\ViewFor.cs" />
     <Compile Include="web\infrastructure\webforms\FormFactory.cs" />
@@ -84,7 +89,6 @@
     <Compile Include="web\infrastructure\ResponseEngine.cs" />
     <Compile Include="web\infrastructure\stubs\StubMissingCommandFactory.cs" />
     <Compile Include="web\infrastructure\stubs\StubRequestFactory.cs" />
-    <Compile Include="web\infrastructure\stubs\StubResponseEngine.cs" />
     <Compile Include="web\infrastructure\stubs\StubSetOfCommands.cs" />
   </ItemGroup>
   <ItemGroup />

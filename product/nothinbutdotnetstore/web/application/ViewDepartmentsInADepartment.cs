@@ -1,9 +1,8 @@
-using System;
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.application.model;
 using nothinbutdotnetstore.web.infrastructure;
-using nothinbutdotnetstore.web.infrastructure.stubs;
+using nothinbutdotnetstore.web.infrastructure.webforms;
 
 namespace nothinbutdotnetstore.web.application
 {
@@ -12,8 +11,8 @@ namespace nothinbutdotnetstore.web.application
         StoreDirectory store_directory;
         ResponseEngine response_engine;
 
-        public ViewDepartmentsInADepartment():this(new StubStoreDirectory(),
-            new StubResponseEngine())
+        public ViewDepartmentsInADepartment() : this(new StubStoreDirectory(),
+                                                     new WebFormResponseEngine())
         {
         }
 

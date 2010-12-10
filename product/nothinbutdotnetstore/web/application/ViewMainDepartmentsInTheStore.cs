@@ -1,7 +1,7 @@
 using nothinbutdotnetstore.tasks;
 using nothinbutdotnetstore.tasks.stubs;
 using nothinbutdotnetstore.web.infrastructure;
-using nothinbutdotnetstore.web.infrastructure.stubs;
+using nothinbutdotnetstore.web.infrastructure.webforms;
 
 namespace nothinbutdotnetstore.web.application
 {
@@ -11,7 +11,7 @@ namespace nothinbutdotnetstore.web.application
         ResponseEngine response_engine;
 
         public ViewMainDepartmentsInTheStore() : this(new StubStoreDirectory(),
-                                                      new StubResponseEngine())
+                                                      new WebFormResponseEngine())
         {
         }
 

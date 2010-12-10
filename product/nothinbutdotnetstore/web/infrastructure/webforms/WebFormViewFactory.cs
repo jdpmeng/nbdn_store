@@ -1,24 +1,30 @@
-using System;
 using System.Web;
+using System.Web.Compilation;
+using nothinbutdotnetstore.web.infrastructure.stubs;
 
 namespace nothinbutdotnetstore.web.infrastructure.webforms
 {
     public class WebFormViewFactory : ViewFactory
     {
-        private FormFactory form_factory;
-        private WebFormRegistry web_form_registry;
+        FormFactory form_factory;
+        WebFormRegistry web_form_registry;
 
-        public WebFormViewFactory(FormFactory formFactory, WebFormRegistry webFormRegistry)
+        public WebFormViewFactory():this(BuildManager.CreateInstanceFromVirtualPath,
+            new StubFormViewRegistry())
         {
-            form_factory = formFactory;
-            web_form_registry = webFormRegistry;
         }
 
-        public IHttpHandler create_view_for<ViewModel>(ViewModel view_view_model)
+        public WebFormViewFactory(FormFactory form_factory, WebFormRegistry web_form_registry)
         {
-            string path = web_form_registry.get_path_to_view_for<ViewModel>();
-            ViewFor<ViewModel> view = (ViewFor<ViewModel>)form_factory(path, view_view_model.GetType());
-            view.model = view_view_model;
+            this.form_factory = form_factory;
+            this.web_form_registry = web_form_registry;
+        }
+
+        public IHttpHandler create_view_for<ViewModel>(ViewModel view_model)
+        {
+            var path = web_form_registry.get_path_to_view_for<ViewModel>();
+            var view = (ViewFor<ViewModel>) form_factory(path, typeof(ViewFor<ViewModel>));
+            view.model = view_model;
             return view;
         }
     }
