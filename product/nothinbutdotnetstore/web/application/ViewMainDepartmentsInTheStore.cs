@@ -10,8 +10,8 @@ namespace nothinbutdotnetstore.web.application
         StoreDirectory store_directory;
         ResponseEngine response_engine;
 
-        public ViewMainDepartmentsInTheStore():this(new StubStoreDirectory(),
-            new StubResponseEngine())
+        public ViewMainDepartmentsInTheStore() : this(new StubStoreDirectory(),
+                                                      new StubResponseEngine())
         {
         }
 

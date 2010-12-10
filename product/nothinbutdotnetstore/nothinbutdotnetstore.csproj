@@ -57,6 +57,8 @@
     <Compile Include="web\infrastructure\stubs\GetTheDepartmentsInADepartment.cs" />
     <Compile Include="web\infrastructure\stubs\GetTheProductsInADepartment.cs" />
     <Compile Include="web\infrastructure\stubs\Query.cs" />
+    <Compile Include="web\infrastructure\ViewFactory.cs" />
+    <Compile Include="web\infrastructure\WebFormResponseEngine.cs" />
     <Compile Include="web\StoreDirectory.cs" />
     <Compile Include="tasks\stubs\StubStoreDirectory.cs" />
     <Compile Include="web\application\model\Department.cs" />
